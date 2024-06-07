@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: 0.3s all;
+}
+
+:root {
+  --main-color: #f5f5f5;
+  --text-color: rgba(0, 0, 0, 0.733);
+  --background-color: #e9e7e7;
+  --operator-color: #2196f3;
+  --ce-color: #f44336;
+  --button-background-color: #f0f0f0;
+  --button-text-color: #333;
+  --button-hover-background-color: #e0e0e0;
+}
+
+:root.dark {
+  --background-color2: rgba(8, 16, 25, 1);
+  --text-color: #fff;
+  --container-background: rgb(22, 38, 48);
+  --calculator-background: #0d1b2a;
+  --calculator-box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.521);
+  --display-background: rgba(24, 36, 54, 0.616);
+  --operator-color: #219ebc;
+  --ce-color: #bf4d5d;
+  --button-background: rgb(22, 38, 48);
+  --button-color: #e0e1dd;
+  --button-hover-background: rgb(15, 26, 34);
+}
+
+.dark * {
+  background-color: var(--background-color2);
+  color: var(--text-color);
+}
+
+.dark .calculator {
+  background-color: #0d1b2a;
+}
+.dark #display {
+  background: rgba(24, 36, 54, 0.616);
+  color: var(--text-color);
+}
+
+.dark button {
+  background: rgb(22, 38, 48);
+}
+
+.dark button:hover {
+  background: rgb(15, 26, 34);
+}
+
+.dark .container span {
+  background: rgb(22, 38, 48);
+}
+
+.dark .container span ::before {
+  background: rgb(22, 38, 48);
+}
+
+.dark #c i::before {
+  background: rgb(22, 38, 48);
+}
+
+.dark #error {
+  background: rgba(24, 36, 54, 0.616);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  background-color: var(--main-color);
+}
+
+.container {
+  position: absolute;
+  right: 40px;
+  top: 50px;
+  height: 40px;
+  width: 40px;
+}
+
+.container span {
+  color: var(--text-color);
+  background: var(--background-color);
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.calculator {
+  max-width: 360px;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+#display {
+  width: 100%;
+  height: 56px;
+  font-size: 20px;
+  text-align: right;
+  margin-bottom: 10px;
+  padding: 20px;
+  border-radius: 5px;
+  color: var(--button-text-color);
+  border: none;
+  background: var(--button-background-color);
+}
+
+.operator {
+  color: var(--operator-color);
+}
+
+#ce {
+  color: var(--ce-color);
+}
+
+.equal {
+  width: calc(25% - 10px);
+}
+
+button {
+  width: calc(25% - 10px);
+  height: 50px;
+  font-size: 20px;
+  margin: 10px 5px;
+  border: none;
+  border-radius: 5px;
+  float: left;
+  background-color: var(--button-background-color);
+  color: var(--button-text-color);
+  transition: 0.1s all;
+}
+
+button:hover {
+  cursor: pointer;
+  background: var(--button-hover-background-color);
+}
+
+button:active {
+  transform: scale(0.9);
+}
+
+#error {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  position: absolute;
+  top: 7.5%;
+  left: 68%;
+  transform: translateX(-50%);
+  color: #b9b9b9;
+  display: none;
+}
